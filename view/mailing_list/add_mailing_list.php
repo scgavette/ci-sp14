@@ -28,6 +28,27 @@ echo validation_errors();
     echo form_label('Zip', 'zip_postal') . ':&nbsp';
     echo form_input($zip_postal) . '<br>';
     
+    $state_code = $arrayName = array('name' => 'state_code', 'id' => 'v');
+    echo form_label('State', 'state_code') . ':&nbsp';
+    echo form_input($state_code) . '<br>';
+    
+    $username = array('name' => 'username', 'id' => 'username');
+    echo form_label('Username', 'username') . ':&nbsp';
+    echo form_input($username) . '<br>';
+    
+    $password = array('name' => 'password', 'id' => 'password');
+    echo form_label('Password', 'password') . ':&nbsp';
+    echo form_input($password) . '<br>';
+    
+    $bio = array('name' => 'bio', 'id' => 'bio');
+    echo form_label('Biography', 'bio') . ':&nbsp';
+    echo form_textarea($bio) . '<br>';
+    
+   // $interest = array('name' => 'interest', 'id' => 'interest');
+   $interests = array('backpak_cal' => 'backpack california', 'cycle_cal' => 'Cycle California', 'nature_watch' => 'Nature Watch');
+    echo form_label('Interests', 'interests') . ':&nbsp';
+    echo form_multiselect('interests',$interests) . '<br>';
+    
     $num_tours1 = $arrayName = array(
         'name' => 'num_tours', 
         'id' => 'num_tours', 
@@ -53,8 +74,9 @@ echo validation_errors();
     echo form_label(' 4-6', 'num_tours') . ':&nbsp';
     echo form_radio($num_tours3);
     echo '</fieldset>';
+    
    
 ?>
-
+<?=form_submit('submit', 'add to mailing list')?>
 <?=form_close();?>
 &nbsp;
